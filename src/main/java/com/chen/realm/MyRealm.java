@@ -37,8 +37,8 @@ public class MyRealm extends AuthorizingRealm {
         if (user == null) {
             return null;
         }
-        SimpleHash hash = new SimpleHash("MD5", user.getPassword(), null, 1024);
         ByteSource bytes = ByteSource.Util.bytes(username);// 加盐
+        SimpleHash hash = new SimpleHash("MD5", user.getPassword(), bytes, 1024);
         SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user.getName(), hash, bytes, getName());
         return info;
     }

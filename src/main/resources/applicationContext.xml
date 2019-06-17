@@ -28,7 +28,7 @@
         <!--设置密码比较器-->
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
-                <property name="hashAlgorithmName" value="MD5"/> <!--加密算法-->
+                <property name="hashAlgorithmName" value="MD5"/> <!--加密算法，对前端的用户的密码进行加密-->
                 <property name="hashIterations" value="1024"/><!--加密次数-->
             </bean>
         </property>
